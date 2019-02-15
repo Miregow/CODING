@@ -1,0 +1,8 @@
+canvas{
+	border: black solid
+}
+
+#pacman{
+	font-family: "lato";
+	font-style:italic;
+}
