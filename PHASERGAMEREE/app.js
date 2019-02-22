@@ -16,7 +16,7 @@ function preload (){
 }
 
 function create(){
-	game.physics.startSystem(Phaser.physics.ARCADE);
+	game.physics.startSystem(Phaser.Physics.ARCADE);
 	game.add.sprite(0,0,'sky')
 	platforms = games.add.physicsGroup();
 	platforms.enableBody = true;
