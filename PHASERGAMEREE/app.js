@@ -32,7 +32,7 @@ function create(){
 	var ledge2 = platforms.create(-100,250, 'platform')
 	ledge2.body.immovable = true;
 	
-	var style = {font; "bold 32px Garamond", fill: '#fff'};
+	var style = {font; "bold 32px Arial", fill: '#fff'};
 	
 	scorelabel = game.add.text(300, 560, "Score:", style);
 	scoretext = game.add.text (420,560,score,style);
