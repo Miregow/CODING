@@ -18,11 +18,12 @@ function preload (){
 function create(){
 	game.physics.startSystem(Phaser.Physics.ARCADE);
 	game.add.sprite(0,0,'sky')
-	platforms = games.add.physicsGroup();
+	platforms = game.add.physicsGroup();
 	platforms.enableBody = true;
 	
 	var platform = platforms.create(0,560,'platform');
 	
+	var ground = platforms.create(0,560,'platform');
 	ground.scale.setTo(2,2);
 	ground.body.immovable = true;
 	
