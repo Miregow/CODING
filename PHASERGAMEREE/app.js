@@ -60,7 +60,7 @@ game.physics.arcade.enable(player)
 	enemy.body.bounce.y = 0.5;
 	collide.body.collideWorldBounds = true;
 	enemy.animations.add('left', [0,1],12.5,true);
-	enemy.animations.add('right', [2,3]12.5,true);
+	enemy.animations.add('right', [2,3],12.5,true);
 
 	stars = game.add.physicsGroup();
 	stars.enableBody = true;
