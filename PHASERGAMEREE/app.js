@@ -94,7 +94,7 @@ function update(){
 		player.animations.stop();
 		player.frame = 4;
 	}
-	if(wKey.isDown) && player.body.touching.down{
+	if(wKey.isDown && player.body.touching.down){
 		player.body.velocity.y = -300;
 
 	}
