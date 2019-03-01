@@ -99,4 +99,16 @@ function update(){
 		player.body.velocity.y = -300;
 
 	}
+	game.physics.arcade.overlap(player,stars,collectStar){
+
+	}
+
+function collectStar(player,star){
+	score += 1;
+	scoretext.setText(score);
+
+	star.kill();
+	star.reset(Math.floor(Math.random() * 760) ,0);
+}
+
 }
