@@ -47,7 +47,7 @@ function create(){
 
 player= game.add.sprite(32, 300, 'dude');
 	game.physics.arcade.enable(player)
-	player.body.gravity.y = 300;
+	player.body.gravity.y = 250;
 	player.body.bounce.y = 0.5;
 	player.body.collideWorldBounds = true;
 	player.animations.add('left', [0,1,2,3],12.5,true);
@@ -56,7 +56,7 @@ player= game.add.sprite(32, 300, 'dude');
 
 enemy= game.add.sprite(760, 20, 'baddie');	
 game.physics.arcade.enable(enemy)
-	enemy.body.gravity.y = 300;
+	enemy.body.gravity.y = 250;
 	enemy.body.bounce.y = 0.5;
 	enemy.body.collideWorldBounds = true;
 	enemy.animations.add('left', [0,1],12.5,true);
