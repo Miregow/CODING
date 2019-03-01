@@ -66,14 +66,15 @@ game.physics.arcade.enable(enemy)
 	stars.enableBody = true;
 	for(var i = 0; i<12; i++){
 		var star = stars.create(i*70,0,"star");
-		star.body.gravity = 200;
+		star.body.gravity.y = 200;
 		star.body.bounce.y = Math.random()*0.2+0.7;
 
-		wKey = game.input.keyboard.addKey(Phaser.Keyboard.W);
-		aKey = game.input.keyboard.addKey(Phaser.Keyboard.A);
-		sKey = game.input.keyboard.addKey(Phaser.Keyboard.S);
-		dKey = game.input.keyboard.addKey(Phaser.Keyboard.D);
 	}
+
+	wKey = game.input.keyboard.addKey(Phaser.Keyboard.W);
+	aKey = game.input.keyboard.addKey(Phaser.Keyboard.A);
+	sKey = game.input.keyboard.addKey(Phaser.Keyboard.S);
+	dKey = game.input.keyboard.addKey(Phaser.Keyboard.D);
 
 }	
 
