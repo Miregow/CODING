@@ -55,7 +55,7 @@ player= game.add.sprite(32, 300, 'dude');
 	
 
 enemy= game.add.sprite(760, 20, 'baddie');	
-game.physics.arcade.enable(player)
+game.physics.arcade.enable(enemy)
 	enemy.body.gravity.y = 1000;
 	enemy.body.bounce.y = 0.5;
 	collide.body.collideWorldBounds = true;
