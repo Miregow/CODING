@@ -39,9 +39,8 @@ function create(){
 	scoretext = game.add.text (420,560,score,style);
 	scorelabel.setShadow(3,3,'rgba(0,0,0,0.5)',2);
 	scoretext.setShadow(3,3,'rgba(0,0,0,0.5)',2);
-	
 	liveslabel = game.add.text(10, 5, "Lives:", style);
-	livestext = game.add.text (120,5,score,style);
+	livestext = game.add.text (120,5,lives,style);
 	liveslabel.setShadow(3,3,'rgba(0,0,0,0.5)',2);
 	livestext.setShadow(3,3,'rgba(0,0,0,0.5)',2);
 
@@ -118,9 +117,8 @@ function collectStar(player,star){
 	star.reset(Math.floor(Math.random() * 760) ,0);
 }
 function loseLife(player,enemy){
-score -= 1;
+lives -= 1;
 	livestext.setText(lives);
-
 	enemy.kill();
 	enemy.reset(10,20);
 }
