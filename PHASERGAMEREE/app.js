@@ -124,9 +124,21 @@ lives -= 1;
 }
 
 function moveEnemy(){
-	
+	if(enemy>759 ){
+		enemy.animations.play('left');
+		enemy.body.velocity.x= -120;
+		}
+		else if (enemy<404){
+		enemy.animations.play('right');
+		enemy.body.velocity.x= 120;
+	}
 }
 
 function endGame(){
-	
+	player.kill();
+	liveslabel.visible = false;
+	livestext.visible =false;
+	scoretext.visible = false;
+	scorelabel.text = `Game Over! You Scored: ${score}`;
+
 	}
