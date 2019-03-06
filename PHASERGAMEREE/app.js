@@ -124,11 +124,11 @@ lives -= 1;
 }
 
 function moveEnemy(){
-	if(enemy>759 ){
+	if(enemy.x>759 ){
 		enemy.animations.play('left');
 		enemy.body.velocity.x= -120;
 		}
-		else if (enemy<404){
+		else if (enemy.x<404){
 		enemy.animations.play('right');
 		enemy.body.velocity.x= 120;
 	}
