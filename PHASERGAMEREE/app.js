@@ -108,6 +108,7 @@ if (life < 0){
 	endGame();
 }	
 
+}
 
 function collectStar(player,star){
 	score += 1;
