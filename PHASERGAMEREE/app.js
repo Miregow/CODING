@@ -99,9 +99,15 @@ function update(){
 		player.body.velocity.y = -300;
 
 	}
-	game.physics.arcade.overlap(player,stars,collectStar){
+	game.physics.arcade.overlap(player,stars,collectStar);
+	game.physics.arcade.overlap(player,enemy,loseLife);
 
-	}
+	moveEnemy();
+
+if (life < 0){
+	endGame();
+}	
+
 
 function collectStar(player,star){
 	score += 1;
@@ -110,5 +116,14 @@ function collectStar(player,star){
 	star.kill();
 	star.reset(Math.floor(Math.random() * 760) ,0);
 }
+function loseLife(){
 
 }
+
+function moveEnemy(){
+	
+}
+
+function endGame(){
+	
+	}
