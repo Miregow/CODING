@@ -53,13 +53,31 @@ player= game.add.sprite(32, 300, 'dude');
 	player.animations.add('right', [5,6,7,8],12.5,true);
 	
 
-enemy= game.add.sprite(760, 20, 'baddie');	
-game.physics.arcade.enable(enemy)
-	enemy.body.gravity.y = 250;
-	enemy.body.bounce.y = 0.5;
-	enemy.body.collideWorldBounds = true;
-	enemy.animations.add('left', [0,1],12.5,true);
-	enemy.animations.add('right', [2,3],12.5,true);
+enemy1= game.add.sprite(760, 20, 'baddie');	
+game.physics.arcade.enable(enemy1)
+	enemy1.body.gravity.y = 250;
+	enemy1.body.bounce.y = 0.5;
+	enemy1.body.collideWorldBounds = true;
+	enemy1.animations.add('left', [0,1],12.5,true);
+	enemy1.animations.add('right', [2,3],12.5,true);
+
+
+enemy2= game.add.sprite(349.8537762889982709, 20, 'baddie');	
+game.physics.arcade.enable(enemy2)
+	enemy2.body.gravity.y = 250;
+	enemy2.body.bounce.y = 0.5;
+	enemy2.body.collideWorldBounds = true;
+	enemy2.animations.add('left', [0,1],12.5,true);
+	enemy2.animations.add('right', [2,3],12.5,true);
+	
+
+enemy3= game.add.sprite(500, 20, 'baddie');	
+game.physics.arcade.enable(enemy3)
+	enemy3.body.gravity.y = 250;
+	enemy3.body.bounce.y = 0.5;
+	enemy3.body.collideWorldBounds = true;
+	enemy3.animations.add('left', [0,1],12.5,true);
+	enemy3.animations.add('right', [2,3],12.5,true);
 
 	stars = game.add.physicsGroup();
 	stars.enableBody = true;
@@ -79,7 +97,9 @@ game.physics.arcade.enable(enemy)
 
 function update(){
 	game.physics.arcade.collide(player,platforms);
-	game.physics.arcade.collide(enemy,platforms);
+	game.physics.arcade.collide(enemy1,platforms);
+	game.physics.arcade.collide(enemy2,platforms);
+	game.physics.arcade.collide(enemy3,platforms);
 	game.physics.arcade.collide(stars,platforms);
 
 	player.body.velocity.x = 0;
@@ -99,11 +119,16 @@ function update(){
 
 	}
 	game.physics.arcade.overlap(player,stars,collectStar);
-	game.physics.arcade.overlap(player,enemy,loseLife);
+	game.physics.arcade.overlap(player,enemy1, loseLife);
+		game.physics.arcade.overlap(player,enemy2, loseLife);
+			game.physics.arcade.overlap(player,enemy3, loseLife);
 
-	moveEnemy();
+	moveEnemy(enemy1, 100);
+	moveEnemy(enemy2,100)
+	moveEnemy(enemy3,100)
 
-if (lives < 0){
+
+if (lives < 1){
 	endGame();
 }	
 
@@ -116,23 +141,37 @@ function collectStar(player,star){
 	star.kill();
 	star.reset(Math.floor(Math.random() * 760) ,0);
 }
-function loseLife(player,enemy){
+function loseLife(player,enemy1){
 lives -= 1;
 	livestext.setText(lives);
-	enemy.kill();
-	enemy.reset(10,20);
+	enemy1.kill();
+	enemy1.reset(10,20);
 }
-
-function moveEnemy(){
-	if(enemy.x>759 ){
+function loseLife(player,enemy2){
+lives -= 1;
+	livestext.setText(lives);
+	enemy2.kill();
+	enemy2.reset(10,20);
+}
+function loseLife(player,enemy3){
+lives -= 1;
+	livestext.setText(lives);
+	enemy3.kill();
+	enemy3.reset(10,20);
+}
+function moveEnemy(enemy, speed){
+	if(enemy.x > player.x){
 		enemy.animations.play('left');
-		enemy.body.velocity.x= -120;
+		enemy.body.velocity.x= -1*speed;
 		}
-		else if (enemy.x<404){
+		else if (enemy.x<player.x){
 		enemy.animations.play('right');
-		enemy.body.velocity.x= 120;
+		enemy.body.velocity.x= speed;
+		}
+		
 	}
-}
+
+
 
 function endGame(){
 	player.kill();
